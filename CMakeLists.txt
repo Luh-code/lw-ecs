@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.1)
-project(umbra-ecs VERSION 1.0 LANGUAGES C CXX)
+project(lw-ecs VERSION 1.0 LANGUAGES C CXX)
 include(CTest)
 
 # Ensures that we do an out of source build
@@ -47,8 +47,6 @@ file(GLOB umbraECSSrcFiles
   ${PROJECT_SOURCE_DIR}/src/**/*.cpp
 )
 
-#add_compile_definitions(UMBRA_DEBUG)
-
 set(ABSL_PROPAGATE_CXX_STD ON)
 add_subdirectory(${PROJECT_SOURCE_DIR}/deps/abseil)
 
@@ -60,12 +58,12 @@ set(UMBRA_ECS_REQUIRED_LINK_LIBRARIES
   absl::container_common
 )
 
-# add_library(libUmbraECS ${umbraSrcFiles})
-# set_target_properties(libUmbraECS PROPERTIES LINKER_LANGUAGE CXX)
-# target_include_directories(libUmbraECS PUBLIC
+# add_library(lw_ecs ${umbraSrcFiles})
+# set_target_properties(lw_ecs PROPERTIES LINKER_LANGUAGE CXX)
+# target_include_directories(lw_ecs PUBLIC
 #   ABSL_COMMON_INCLUDE_DIRS
 # )
-# target_link_libraries(libUmbraECS PUBLIC
+# target_link_libraries(lw_ecs PUBLIC
 #   absl::flat_hash_set
 #   absl::container_common
 # )
